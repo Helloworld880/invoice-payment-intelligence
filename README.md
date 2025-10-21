@@ -30,16 +30,7 @@ Invoice Payment Intelligence is an enterprise-grade AI platform that predicts in
 
 
 
-## 🎯 Quick Demo
 
-**See it in action in under 2 minutes:**
-
-```bash
-# One-command demo
-git clone https://github.com/yourusername/invoice-payment-intelligence.git
-cd invoice-payment-intelligence
-docker-compose up -d
-# Open http://localhost:8501
 ---
 
 
