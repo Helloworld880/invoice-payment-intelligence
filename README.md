@@ -114,14 +114,12 @@ invoice-payment/
 │   │   ├── xgboost.pkl
 │   │   └── neural_network.h5
 │   └── checkpoints/                   # Training checkpoints
-│
 ├── 📁 data/
 │   ├── raw/                           # Raw input data
 │   ├── processed/                     # Cleaned and transformed data
 │   ├── sample/                        # Sample datasets for testing
 │   │   └── sample_invoices.csv
 │   └── exports/                       # Generated reports and exports
-│
 ├── 📁 docs/
 │   ├── API.md                         # API documentation
 │   ├── ARCHITECTURE.md                # System architecture details
