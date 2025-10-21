@@ -1,0 +1,59 @@
+  
+app:
+  name: "Invoice Payment Intelligence"
+  version: "2.0.0"
+  debug: false
+  log_level: "INFO"
+
+model:
+  paths:
+    - "src/models/saved_models/payment_predictor.joblib"
+    - "src/models/saved_models/model.pkl"
+  risk_thresholds:
+    low: 0.4
+    medium: 0.7
+    high: 1.0
+  demo_mode: true
+
+data:
+  required_columns:
+    - "customer_industry"
+    - "customer_credit_score"
+    - "invoice_amount"
+  optional_columns:
+    - "due_days"
+    - "avg_payment_delay_history"
+    - "payment_consistency"
+    - "invoice_id"
+    - "customer_id"
+  max_file_size_mb: 100
+  allowed_file_types: ["csv"]
+
+ui:
+  theme: "light"
+  page_size: 25
+  auto_refresh: true
+
+business:
+  interest_rate: 0.08
+  recovery_rate: 0.7
+  working_days_per_year: 365
+
+  # docker-compose.yml - NEW FILE:
+version: '3.8'
+services:
+  invoice-app:
+    build: .
+    ports:
+      - "8501:8501"
+    environment:
+      - DATABASE_URL=postgresql://user:pass@db:5432/invoices
+    depends_on:
+      - db
+  
+  db:
+    image: postgres:13
+    environment:
+      - POSTGRES_DB=invoices
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=pass
