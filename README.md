@@ -51,80 +51,85 @@ Invoice Payment Intelligence is an enterprise-grade AI platform that predicts in
 ---
 
 ## 📁 Project Structure
+## 📁 Project Structure
+
+```
 invoice-payment/
-├── app.py # Main Streamlit application
-├── database.py # Database models and operations
-├── spark_processor.py # Apache Spark integration
+├── app.py                     # Main Streamlit application
+├── database.py                # Database models and operations
+├── spark_processor.py         # Apache Spark integration
 ├── deep_learning_predictor.py # Neural network models
-├── config.py # Configuration management
-├── requirements.txt # Python dependencies
-├── requirements-dev.txt # Development dependencies
-├── Dockerfile # Docker container configuration
-├── Dockerfile.prod # Production Docker configuration
-├── docker-compose.yml # Local development services
-├── docker-compose.prod.yml # Production services
-├── .env.example # Environment variables template
-├── .gitignore # Git ignore rules
-├── README.md # This file
-├── LICENSE # MIT License
+├── config.py                  # Configuration management
+├── requirements.txt           # Python dependencies
+├── requirements-dev.txt       # Development dependencies
+├── Dockerfile                 # Docker container configuration
+├── Dockerfile.prod            # Production Docker configuration
+├── docker-compose.yml         # Local development services
+├── docker-compose.prod.yml    # Production services
+├── .env.example               # Environment variables template
+├── .gitignore                 # Git ignore rules
+├── README.md                  # This file
+├── LICENSE                    # MIT License
 ├── .github/
-│ └── workflows/
-│ ├── ci.yml # Continuous Integration
-│ ├── deploy.yml # Deployment automation
-│ └── tests.yml # Test automation
+│   └── workflows/
+│       ├── ci.yml             # Continuous Integration
+│       ├── deploy.yml         # Deployment automation
+│       └── tests.yml          # Test automation
 ├── database/
-│ ├── init.sql # Database schema initialization
-│ ├── migrations/ # Database migrations
-│ └── seeds/ # Sample data
+│   ├── init.sql               # Database schema initialization
+│   ├── migrations/            # Database migrations
+│   └── seeds/                 # Sample data
 ├── tests/
-│ ├── init.py
-│ ├── conftest.py # Pytest configuration
-│ ├── test_app.py # Application tests
-│ ├── test_database.py # Database tests
-│ ├── test_spark.py # Spark integration tests
-│ ├── test_deep_learning.py # ML model tests
-│ ├── test_integration.py # End-to-end tests
-│ └── test_performance.py # Performance benchmarks
+│   ├── __init__.py
+│   ├── conftest.py            # Pytest configuration
+│   ├── test_app.py            # Application tests
+│   ├── test_database.py       # Database tests
+│   ├── test_spark.py          # Spark integration tests
+│   ├── test_deep_learning.py  # ML model tests
+│   ├── test_integration.py    # End-to-end tests
+│   └── test_performance.py    # Performance benchmarks
 ├── src/
-│ ├── init.py
-│ ├── components/ # Reusable UI components
-│ │ ├── dashboard.py
-│ │ ├── charts.py
-│ │ └── forms.py
-│ ├── models/ # ML model implementations
-│ │ ├── traditional_ml.py
-│ │ ├── deep_learning.py
-│ │ └── ensemble.py
-│ ├── utils/ # Helper functions
-│ │ ├── data_preprocessing.py
-│ │ ├── feature_engineering.py
-│ │ └── validation.py
-│ └── api/ # API endpoints (optional)
-│ └── routes.py
+│   ├── __init__.py
+│   ├── components/            # Reusable UI components
+│   │   ├── dashboard.py
+│   │   ├── charts.py
+│   │   └── forms.py
+│   ├── models/                # ML model implementations
+│   │   ├── traditional_ml.py
+│   │   ├── deep_learning.py
+│   │   └── ensemble.py
+│   ├── utils/                 # Helper functions
+│   │   ├── data_preprocessing.py
+│   │   ├── feature_engineering.py
+│   │   └── validation.py
+│   └── api/                   # API endpoints (optional)
+│       └── routes.py
 ├── models/
-│ ├── saved_models/ # Trained model artifacts
-│ │ ├── random_forest.pkl
-│ │ ├── xgboost.pkl
-│ │ └── neural_network.h5
-│ └── checkpoints/ # Training checkpoints
+│   ├── saved_models/          # Trained model artifacts
+│   │   ├── random_forest.pkl
+│   │   ├── xgboost.pkl
+│   │   └── neural_network.h5
+│   └── checkpoints/           # Training checkpoints
 ├── data/
-│ ├── raw/ # Raw input data
-│ ├── processed/ # Cleaned and transformed data
-│ ├── sample/ # Sample datasets for testing
-│ │ └── sample_invoices.csv
-│ └── exports/ # Generated reports and exports
+│   ├── raw/                   # Raw input data
+│   ├── processed/             # Cleaned and transformed data
+│   ├── sample/                # Sample datasets for testing
+│   │   └── sample_invoices.csv
+│   └── exports/               # Generated reports and exports
 ├── docs/
-│ ├── API.md # API documentation
-│ ├── ARCHITECTURE.md # System architecture details
-│ ├── DEPLOYMENT.md # Deployment guide
-│ ├── CONTRIBUTING.md # Contribution guidelines
-│ └── CHANGELOG.md # Version history
+│   ├── API.md                 # API documentation
+│   ├── ARCHITECTURE.md        # System architecture details
+│   ├── DEPLOYMENT.md          # Deployment guide
+│   ├── CONTRIBUTING.md        # Contribution guidelines
+│   └── CHANGELOG.md           # Version history
 ├── scripts/
-│ ├── setup.sh # Initial setup script
-│ ├── train_models.py # Model training script
-│ ├── backup.sh # Database backup script
-│ └── deploy.sh # Deployment script
+│   ├── setup.sh               # Initial setup script
+│   ├── train_models.py        # Model training script
+│   ├── backup.sh              # Database backup script
+│   └── deploy.sh              # Deployment script
 └── notebooks/
-├── data_exploration.ipynb # EDA notebooks
-├── model_training.ipynb # Model development
-└── performance_analysis.ipynb # Performance analysis
+    ├── data_exploration.ipynb # EDA notebooks
+    ├── model_training.ipynb   # Model development
+    └── performance_analysis.ipynb # Performance analysis
+```
+
