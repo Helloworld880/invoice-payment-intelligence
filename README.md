@@ -206,10 +206,16 @@ Customize runtime behavior through the web interface:
 # Run comprehensive test suite
 python -m pytest tests/ -v --cov=app --cov-report=html
 
-# Specific test categories
-python -m pytest tests/test_spark.py -v           # Big Data processing
-python -m pytest tests/test_deep_learning.py -v   # ML models
-python -m pytest tests/test_database.py -v        # Database operations
+### 🧪 Specific Test Categories
+
+Run targeted test suites as needed:
+
+```bash
+python -m pytest tests/test_spark.py -v          # Big Data processing
+python -m pytest tests/test_deep_learning.py -v  # ML models
+python -m pytest tests/test_database.py -v       # Database operations
+
+```
 
 # Code quality checks
 flake8 app.py src/ tests/
