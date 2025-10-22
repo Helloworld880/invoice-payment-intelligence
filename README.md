@@ -141,40 +141,40 @@ invoice-payment/
 
 💡 Core Features
 1. Single Invoice Prediction
-Real-time Risk Scoring: Instant payment delay probability assessment
+    Real-time Risk Scoring: Instant payment delay probability assessment
 
-Multi-Model Support: Switch between Traditional ML and Deep Learning
+    Multi-Model Support: Switch between Traditional ML and Deep Learning
 
-Factor Analysis: Detailed breakdown of risk contributors
+    Factor Analysis: Detailed breakdown of risk contributors
 
-Actionable Insights: Specific recommendations for each risk level
+    Actionable Insights: Specific recommendations for each risk level
 
 2. Batch Processing
-Scalable Analytics: Handle datasets from 100 to 1,000,000+ records
+    Scalable Analytics: Handle datasets from 100 to 1,000,000+ records
 
-Spark Integration: Distributed computing for large-scale processing
+    Spark Integration: Distributed computing for large-scale processing
 
-Automated Risk Classification: Bulk invoice risk assessment
+    Automated Risk Classification: Bulk invoice risk assessment
 
-Export Capabilities: CSV, Excel, and PDF reporting
+    Export Capabilities: CSV, Excel, and PDF reporting
 
 3. Business Intelligence
-Historical Analytics: Trend analysis and pattern recognition
+    Historical Analytics: Trend analysis and pattern recognition
 
-Industry Benchmarking: Comparative performance metrics
+    Industry Benchmarking: Comparative performance metrics
 
-Financial Impact: Opportunity cost and savings calculations
+    Financial Impact: Opportunity cost and savings calculations
 
-Strategic Planning: Data-driven decision support
+    Strategic Planning: Data-driven decision support
 
 4. System Management
-Feature Flags: Runtime configuration of ML engines
+    Feature Flags: Runtime configuration of ML engines
 
-Performance Monitoring: Real-time system metrics
+    Performance Monitoring: Real-time system metrics
 
-Health Checks: Automated service monitoring
+    Health Checks: Automated service monitoring
 
-Configuration Management: Environment-based settings
+    Configuration Management: Environment-based settings
 
 ⚙️ Configuration
 # Database Configuration
