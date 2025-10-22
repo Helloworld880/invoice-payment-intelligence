@@ -199,17 +199,17 @@ streamlit run app.py
     Configuration Management: Environment-based settings
 
 ⚙️ Configuration
-# Database Configuration
-DATABASE_URL=postgresql://username:password@localhost:5432/invoice_db
+ Database Configuration
+DATABASE_URL=postgresql://Helloworld880@localhost:5432/invoice_db
 
-# Machine Learning Settings
+ Machine Learning Settings
 USE_DEEP_LEARNING=false
 MODEL_PATH=models/saved_models/
 
-# Spark Configuration  
+ Spark Configuration  
 SPARK_MASTER=local[*]
 
-# Application Settings
+Application Settings
 STREAMLIT_SERVER_PORT=8501
 LOG_LEVEL=INFO
 
@@ -311,8 +311,6 @@ Our ensemble approach consistently delivers:
 Contributions, feature requests, and issues are welcome!
 See docs/CONTRIBUTING.md
  for setup, coding style, and PR workflow.
-
- 📜 License
 
 📜 License
 
