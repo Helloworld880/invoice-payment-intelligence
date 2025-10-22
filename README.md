@@ -228,8 +228,7 @@ Customize runtime behavior through the web interface:
 # Run comprehensive test suite
 python -m pytest tests/ -v --cov=app --cov-report=html
 
-## 🧪 Specific Test Categories
-
+##🧪Specific Test Categories
 Run targeted test suites as needed:
 
 ```bash
@@ -307,10 +306,9 @@ Our ensemble approach consistently delivers:
 ---
 
 🤝 Contributing
+Contributions, feature requests, and issues are welcome!  
+See [CONTRIBUTING.md](docs/CONTRIBUTING.md) for setup, coding style, and PR workflow.
 
-Contributions, feature requests, and issues are welcome!
-See docs/CONTRIBUTING.md
-for setup, coding style, and PR workflow.
 
 📜 License
 This project is licensed under the [MIT License](./LICENSE) — see the file for full details.
