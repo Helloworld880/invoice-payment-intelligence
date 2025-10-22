@@ -314,9 +314,10 @@ See docs/CONTRIBUTING.md
 
  📜 License
 
-This project is licensed under the MIT License.
-See the LICENSE
- file for full details.
+📜 License
+
+This project is licensed under the [MIT License](./LICENSE) — see the file for full details.
+
 
 🌐 Contact
 
