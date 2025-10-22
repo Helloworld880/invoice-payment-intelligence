@@ -5,7 +5,7 @@ Python • Streamlit • TensorFlow • PostgreSQL • Docker • Apache Spark
 
 Predict Payment Delays • Assess Credit Risk • Optimize Cash Flow
 
-**Features • Quick Start • Demo • Architecture • Documentation**
+**Features • Quick Start • Architecture 
 
 ---
 
