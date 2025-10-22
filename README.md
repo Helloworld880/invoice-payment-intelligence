@@ -306,4 +306,21 @@ Our ensemble approach consistently delivers:
 
 ---
 
+🤝 Contributing
 
+Contributions, feature requests, and issues are welcome!
+See docs/CONTRIBUTING.md
+ for setup, coding style, and PR workflow.
+
+ 📜 License
+
+This project is licensed under the MIT License.
+See the LICENSE
+ file for full details.
+
+🌐 Contact
+
+Team Invoice AI
+📧:worldget491@gmail.com
+
+🌍 https://github.com/Helloworld880/invoice_payment_Python
