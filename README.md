@@ -36,7 +36,7 @@ Invoice Payment Intelligence is an enterprise-grade AI platform that predicts in
 
 ## ✨ Features
 
-### 🤖 Dual ML Engine System
+## 🤖 Dual ML Engine System
 
 **Traditional Machine Learning**  
 - Random Forest Classifier  
@@ -146,8 +146,8 @@ invoice-payment/
 
 ```bash
 # 1️⃣ Clone the repository
-git clone https://github.com/yourusername/invoice-payment-intelligence.git
-cd invoice-payment-intelligence
+git clone https://github.com/Helloworld880/invoice_payment_Python.git
+cd invoice_payment_Python
 
 # 2️⃣ Install dependencies
 pip install -r requirements.txt
@@ -228,7 +228,7 @@ Customize runtime behavior through the web interface:
 # Run comprehensive test suite
 python -m pytest tests/ -v --cov=app --cov-report=html
 
-### 🧪 Specific Test Categories
+## 🧪 Specific Test Categories
 
 Run targeted test suites as needed:
 
@@ -269,35 +269,35 @@ Our ensemble approach consistently delivers:
 
 ## 🗺️ Roadmap
 
-### Version 1.0 (Current)
+## Version 1.0 (Current)
 - ✅ Core prediction engine (Traditional ML + Deep Learning)  
 - ✅ Batch processing with Spark  
 - ✅ Interactive Streamlit dashboard  
 - ✅ PostgreSQL and Redis integration  
 - ✅ Docker deployment support  
 
-### Version 1.1 (Q1 2024)
+## Version 1.1 (Q1 2024)
 - REST API endpoints  
 - User authentication and authorization  
 - Advanced visualization dashboard  
 - Model retraining pipeline  
 - Enhanced export formats (PDF reports)  
 
-### Version 1.2 (Q2 2024)
+## Version 1.2 (Q2 2024)
 - Real-time streaming predictions  
 - Multi-language support  
 - Mobile-responsive design  
 - Integration with accounting software (QuickBooks, Xero)  
 - Automated email alerts  
 
-### Version 2.0 (Q3 2024)
+## Version 2.0 (Q3 2024)
 - Multi-tenant support  
 - Advanced analytics (customer segmentation, churn prediction)  
 - Custom model training interface  
 - GraphQL API  
 - Mobile app (iOS/Android)  
 
-### Version 2.1 (Q4 2024)
+## Version 2.1 (Q4 2024)
 - AI-powered recommendations engine  
 - Integration marketplace  
 - Advanced security features (SSO, 2FA)  
@@ -320,6 +320,5 @@ This project is licensed under the [MIT License](./LICENSE) — see the file for
 🌐 Contact
 
 Team Invoice AI
-📧:worldget491@gmail.com
-
-🌍 https://github.com/Helloworld880/invoice_payment_Python
+📧 [worldget491@gmail.com](mailto:worldget491@gmail.com)  
+🌍 [GitHub Repository](https://github.com/Helloworld880/invoice_payment_Python)
