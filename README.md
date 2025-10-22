@@ -245,13 +245,13 @@ black --check app.py src/ tests/
 
 ## 📈 Performance Metrics
 
-| Scenario                  | Engine           | Accuracy | Speed   | Best For               |
-|----------------------------|----------------|----------|--------|-----------------------|
-| Single Prediction          | Traditional ML  | 87%      | ~50ms  | Real-time decisions    |
-| Single Prediction          | Deep Learning   | 92%      | ~200ms | Maximum accuracy       |
-| Batch Processing (10K)     | Pandas          | 87%      | ~5s    | Medium datasets        |
-| Batch Processing (10K)     | Spark           | 87%      | ~3s    | Large datasets         |
-| Batch Processing (100K+)   | Spark           | 87%      | ~30s   | Enterprise scale       |
+| Scenario                 | Engine         | Accuracy | Speed  | Best For            |
+| ------------------------ | -------------- | -------- | ------ | ------------------- |
+| Single Prediction        | Traditional ML | 87%      | ~50ms  | Real-time decisions |
+| Single Prediction        | Deep Learning  | 92%      | ~200ms | Maximum accuracy    |
+| Batch Processing (10K)   | Pandas         | 87%      | ~5s    | Medium datasets     |
+| Batch Processing (10K)   | Spark          | 87%      | ~3s    | Large datasets      |
+| Batch Processing (100K+) | Spark          | 87%      | ~30s   | Enterprise scale    |
 
 
 📊 Model Performance
@@ -270,11 +270,11 @@ Our ensemble approach consistently delivers:
 ## 🗺️ Roadmap
 
 ## Version 1.0 (Current)
-- ✅ Core prediction engine (Traditional ML + Deep Learning)  
-- ✅ Batch processing with Spark  
-- ✅ Interactive Streamlit dashboard  
-- ✅ PostgreSQL and Redis integration  
-- ✅ Docker deployment support  
+-  Core prediction engine (Traditional ML + Deep Learning)  
+-  Batch processing with Spark  
+-  Interactive Streamlit dashboard  
+-  PostgreSQL and Redis integration  
+-  Docker deployment support  
 
 ## Version 1.1 (Q1 2024)
 - REST API endpoints  
@@ -310,15 +310,12 @@ Our ensemble approach consistently delivers:
 
 Contributions, feature requests, and issues are welcome!
 See docs/CONTRIBUTING.md
- for setup, coding style, and PR workflow.
+for setup, coding style, and PR workflow.
 
 📜 License
-
 This project is licensed under the [MIT License](./LICENSE) — see the file for full details.
 
-
 🌐 Contact
-
 Team Invoice AI
 📧 [worldget491@gmail.com](mailto:worldget491@gmail.com)  
 🌍 [GitHub Repository](https://github.com/Helloworld880/invoice_payment_Python)
