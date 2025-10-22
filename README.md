@@ -139,6 +139,28 @@ invoice-payment/
     └── performance_analysis.ipynb # Performance analysis
 ```
 
+```
+---
+
+## 🚀 Quick Start
+
+```bash
+# 1️⃣ Clone the repository
+git clone https://github.com/yourusername/invoice-payment-intelligence.git
+cd invoice-payment-intelligence
+
+# 2️⃣ Install dependencies
+pip install -r requirements.txt
+
+# 3️⃣ Configure environment
+cp .env.example .env
+# Update your credentials and paths
+
+# 4️⃣ Run the Streamlit app
+streamlit run app.py
+
+```
+
 💡 Core Features
 1. Single Invoice Prediction
     Real-time Risk Scoring: Instant payment delay probability assessment
