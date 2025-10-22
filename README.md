@@ -278,13 +278,4 @@ Our ensemble approach consistently delivers:
 
 ---
 
-## 📊 Statistics
-
-- GitHub Stars: ⭐  
-- GitHub Forks: 🍴  
-- GitHub Watchers: 👀  
-- Open Issues: 🐛  
-- Pull Requests: 🔀  
-- License: MIT  
-- Last Commit: 📅
 
