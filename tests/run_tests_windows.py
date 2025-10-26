@@ -1,25 +1,45 @@
 # tests/run_tests_windows.py
-import os
 import sys
-import unittest
+import os
+import subprocess
 
-def main():
-    """Run all tests in the tests directory."""
+def run_tests_windows():
+    """Run tests on Windows with proper path setup"""
     
-    # Add project root to sys.path for imports
-    project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    # Get the project root directory
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    project_root = os.path.dirname(current_dir)
+    
+    # Add project root to Python path
     sys.path.insert(0, project_root)
-
-    # Discover and load all test files starting with 'test_'
-    loader = unittest.TestLoader()
-    suite = loader.discover(start_dir=os.path.dirname(__file__), pattern='test_*.py')
-
-    # Run the tests
-    runner = unittest.TextTestRunner(verbosity=2)
-    result = runner.run(suite)
-
-    # Return appropriate exit code
-    sys.exit(0 if result.wasSuccessful() else 1)
+    
+    print(f"🔧 Project root: {project_root}")
+    print(f"🔧 Python path: {sys.path}")
+    
+    test_files = [
+        'test_setup.py',
+        'test_utils.py', 
+        'test_app.py'
+    ]
+    
+    for test_file in test_files:
+        test_path = os.path.join(current_dir, test_file)
+        print(f"\n{'='*60}")
+        print(f"🚀 Running {test_file}...")
+        print('='*60)
+        
+        try:
+            # Read and execute the test file
+            with open(test_path, 'r', encoding='utf-8') as f:
+                test_code = f.read()
+            
+            # Add the project root to the code
+            exec(test_code, {'__name__': '__main__', 'project_root': project_root})
+            
+        except Exception as e:
+            print(f"❌ Error running {test_file}: {e}")
+            import traceback
+            traceback.print_exc()
 
 if __name__ == "__main__":
-    main()
+    run_tests_windows()

@@ -52,3 +52,8 @@
 2025-10-26 18:08:56,912 - INFO - Closing down clientserver connection
 2025-10-26 18:09:26,186 - WARNING - Model not trained, returning random predictions
 2025-10-26 18:09:26,187 - ERROR - Batch processing error: cannot access local variable 'delay' where it is not associated with a value
+2025-10-26 18:16:21,162 - WARNING - Model not trained, returning random predictions
+2025-10-26 18:16:21,163 - ERROR - Batch processing error: cannot access local variable 'delay' where it is not associated with a value
+2025-10-26 18:19:24,527 - INFO - Closing down clientserver connection
+2025-10-26 18:20:15,821 - INFO - Closing down clientserver connection
+2025-10-26 18:20:53,530 - INFO - Closing down clientserver connection
