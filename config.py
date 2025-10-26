@@ -1,10 +1,13 @@
-# config.py - Configuration Management
+# config.py - Humanized Configuration Management
 import os
 import yaml
+import logging
 from dataclasses import dataclass
 from typing import Dict, Any
-import logging
 
+# -----------------------------
+# Dataclasses for Configuration
+# -----------------------------
 @dataclass
 class DatabaseConfig:
     url: str = "sqlite:///invoices.db"
@@ -34,112 +37,102 @@ class AppConfig:
     debug: bool = False
     log_level: str = "INFO"
 
+# -----------------------------
+# Main Config Class
+# -----------------------------
 class Config:
-    """Main configuration class"""
-    
+    """Central configuration manager for the application."""
+
     def __init__(self):
+        # Initialize sub-configs
         self.database = DatabaseConfig()
         self.model = ModelConfig()
         self.spark = SparkConfig()
         self.app = AppConfig()
+        
+        # Logger
         self.logger = logging.getLogger(__name__)
+
+        # Load environment variables and YAML file
         self.load_from_env()
         self.load_from_yaml()
-    
+
+    # -----------------------------
+    # Load from Environment Variables
+    # -----------------------------
     def load_from_env(self):
-        """Load configuration from environment variables"""
+        """Override config with environment variables if available."""
         try:
-            # Database
-            if os.getenv('DATABASE_URL'):
-                self.database.url = os.getenv('DATABASE_URL')
-            
-            # Model
-            if os.getenv('USE_DEEP_LEARNING'):
-                self.model.use_deep_learning = os.getenv('USE_DEEP_LEARNING').lower() == 'true'
-            
-            if os.getenv('MODEL_PATH'):
-                self.model.model_path = os.getenv('MODEL_PATH')
-            
-            # Spark
-            if os.getenv('SPARK_MASTER'):
-                self.spark.master = os.getenv('SPARK_MASTER')
-            
-            # App
-            if os.getenv('STREAMLIT_SERVER_PORT'):
-                self.app.port = int(os.getenv('STREAMLIT_SERVER_PORT'))
-            
-            if os.getenv('LOG_LEVEL'):
-                self.app.log_level = os.getenv('LOG_LEVEL')
-                
+            self.database.url = os.getenv("DATABASE_URL", self.database.url)
+            self.model.use_deep_learning = os.getenv("USE_DEEP_LEARNING", str(self.model.use_deep_learning)).lower() == "true"
+            self.model.model_path = os.getenv("MODEL_PATH", self.model.model_path)
+            self.spark.master = os.getenv("SPARK_MASTER", self.spark.master)
+            self.app.port = int(os.getenv("STREAMLIT_SERVER_PORT", self.app.port))
+            self.app.log_level = os.getenv("LOG_LEVEL", self.app.log_level)
         except Exception as e:
-            self.logger.warning(f"Environment configuration loading failed: {str(e)}")
-    
-    def load_from_yaml(self, filepath='config.yaml'):
-        """Load configuration from YAML file"""
+            self.logger.warning(f"Environment configuration loading failed: {e}")
+
+    # -----------------------------
+    # Load from YAML File
+    # -----------------------------
+    def load_from_yaml(self, filepath: str = "config.yaml"):
+        """Load configuration values from a YAML file."""
+        if not os.path.exists(filepath):
+            self.logger.info("No YAML configuration file found, skipping.")
+            return
+
         try:
-            if os.path.exists(filepath):
-                with open(filepath, 'r') as file:
-                    yaml_config = yaml.safe_load(file)
-                
-                # Update configuration from YAML
-                if 'database' in yaml_config:
-                    self._update_from_dict(self.database, yaml_config['database'])
-                if 'model' in yaml_config:
-                    self._update_from_dict(self.model, yaml_config['model'])
-                if 'spark' in yaml_config:
-                    self._update_from_dict(self.spark, yaml_config['spark'])
-                if 'app' in yaml_config:
-                    self._update_from_dict(self.app, yaml_config['app'])
-                    
-                self.logger.info("✅ Configuration loaded from YAML file")
-                
+            with open(filepath, "r") as file:
+                yaml_config = yaml.safe_load(file)
+
+            # Update each sub-config
+            for key, sub_config in [("database", self.database),
+                                    ("model", self.model),
+                                    ("spark", self.spark),
+                                    ("app", self.app)]:
+                if key in yaml_config:
+                    self._update_from_dict(sub_config, yaml_config[key])
+
+            self.logger.info("✅ Configuration loaded from YAML file")
+
         except Exception as e:
-            self.logger.warning(f"YAML configuration loading failed: {str(e)}")
-    
-    def _update_from_dict(self, config_obj, config_dict):
-        """Update configuration object from dictionary"""
+            self.logger.warning(f"YAML configuration loading failed: {e}")
+
+    # -----------------------------
+    # Helper: Update Dataclass from Dict
+    # -----------------------------
+    @staticmethod
+    def _update_from_dict(config_obj, config_dict: Dict[str, Any]):
+        """Update a dataclass instance from a dictionary."""
         for key, value in config_dict.items():
             if hasattr(config_obj, key):
                 setattr(config_obj, key, value)
-    
+
+    # -----------------------------
+    # Convert Config to Dict
+    # -----------------------------
     def to_dict(self) -> Dict[str, Any]:
-        """Convert configuration to dictionary"""
+        """Convert full configuration to a dictionary."""
         return {
-            'database': {
-                'url': self.database.url,
-                'pool_size': self.database.pool_size,
-                'max_overflow': self.database.max_overflow,
-                'pool_timeout': self.database.pool_timeout
-            },
-            'model': {
-                'risk_threshold_low': self.model.risk_threshold_low,
-                'risk_threshold_medium': self.model.risk_threshold_medium,
-                'risk_threshold_high': self.model.risk_threshold_high,
-                'use_deep_learning': self.model.use_deep_learning,
-                'model_path': self.model.model_path
-            },
-            'spark': {
-                'master': self.spark.master,
-                'executor_memory': self.spark.executor_memory,
-                'driver_memory': self.spark.driver_memory,
-                'shuffle_partitions': self.spark.shuffle_partitions
-            },
-            'app': {
-                'port': self.app.port,
-                'host': self.app.host,
-                'debug': self.app.debug,
-                'log_level': self.app.log_level
-            }
+            "database": vars(self.database),
+            "model": vars(self.model),
+            "spark": vars(self.spark),
+            "app": vars(self.app),
         }
-    
-    def save_to_yaml(self, filepath='config.yaml'):
-        """Save configuration to YAML file"""
+
+    # -----------------------------
+    # Save Config to YAML
+    # -----------------------------
+    def save_to_yaml(self, filepath: str = "config.yaml"):
+        """Persist current configuration to a YAML file."""
         try:
-            with open(filepath, 'w') as file:
+            with open(filepath, "w") as file:
                 yaml.dump(self.to_dict(), file, default_flow_style=False)
             self.logger.info(f"✅ Configuration saved to {filepath}")
         except Exception as e:
-            self.logger.error(f"❌ Failed to save configuration: {str(e)}")
+            self.logger.error(f"❌ Failed to save configuration: {e}")
 
-# Global configuration instance
+# -----------------------------
+# Global Configuration Instance
+# -----------------------------
 config = Config()

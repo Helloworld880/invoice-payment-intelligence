@@ -1,4 +1,4 @@
-# quick_currency_test.py
+
 import sys
 import os
 sys.path.append('.')

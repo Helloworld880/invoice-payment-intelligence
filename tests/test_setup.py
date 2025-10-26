@@ -1,8 +1,9 @@
 # test_setup.py
 import os
 import sys
+import subprocess
 
-# Add the project root to Python path
+# Add project root to Python path
 project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, project_root)
 
@@ -11,12 +12,13 @@ from src.utils.helpers import format_currency, calculate_financial_impact
 from src.utils.validators import DataValidator, InputValidator
 
 def check_project_structure():
-    print("🔍 Checking project structure...")
+    """Check critical files, directories, and model availability."""
     
-    # Check critical files and directories
+    print("Checking project structure...\n")
+    
     paths_to_check = [
         'app.py',
-        'scripts/train_run.py', 
+        'scripts/train_run.py',
         'src/Model_trainer.py',
         'src/Data_processor.py',
         'data/raw/',
@@ -25,18 +27,17 @@ def check_project_structure():
     
     for path in paths_to_check:
         exists = os.path.exists(path)
-        status = "✅" if exists else "❌"
-        print(f"{status} {path}: {exists}")
+        status = "Found" if exists else "Missing"
+        print(f"{status}: {path}")
     
-    # Check if model exists
     model_path = 'src/models/saved_models/payment_predictor.joblib'
-    model_exists = os.path.exists(model_path)
-    print(f"{'✅' if model_exists else '❌'} Model file: {model_path} - {model_exists}")
-    
-    if not model_exists:
-        print("\n🚨 MODEL NOT FOUND! Running training pipeline...")
-        # Run the training
-        os.system('python scripts/train_run.py')
+    if os.path.exists(model_path):
+        print(f"Model exists: {model_path}")
+    else:
+        print(f"Model NOT FOUND: {model_path}")
+        print("Running training pipeline...")
+        # Run the training script safely
+        subprocess.run([sys.executable, 'scripts/train_run.py'], check=True)
 
 if __name__ == "__main__":
     check_project_structure()
