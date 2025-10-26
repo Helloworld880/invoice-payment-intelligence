@@ -46,3 +46,9 @@
 2025-10-22 22:57:10,288 - py4j.clientserver - INFO - Closing down clientserver connection
 2025-10-22 22:58:31,893 - py4j.clientserver - INFO - Closing down clientserver connection
 2025-10-22 23:01:45,918 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-10-26 18:08:08,629 - WARNING - From C:\Users\yashd\Desktop\invoice payment\venv\Lib\site-packages\keras\src\backend\common\global_state.py:82: The name tf.reset_default_graph is deprecated. Please use tf.compat.v1.reset_default_graph instead.
+
+2025-10-26 18:08:08,850 - INFO - Closing down clientserver connection
+2025-10-26 18:08:56,912 - INFO - Closing down clientserver connection
+2025-10-26 18:09:26,186 - WARNING - Model not trained, returning random predictions
+2025-10-26 18:09:26,187 - ERROR - Batch processing error: cannot access local variable 'delay' where it is not associated with a value
