@@ -57,3 +57,11 @@
 2025-10-26 18:19:24,527 - INFO - Closing down clientserver connection
 2025-10-26 18:20:15,821 - INFO - Closing down clientserver connection
 2025-10-26 18:20:53,530 - INFO - Closing down clientserver connection
+2025-10-26 18:33:23,752 - INFO - Closing down clientserver connection
+2025-10-29 23:50:27,901 - tensorflow - WARNING - From C:\Users\yashd\AppData\Local\Programs\Python\Python313\Lib\site-packages\keras\src\backend\common\global_state.py:82: The name tf.reset_default_graph is deprecated. Please use tf.compat.v1.reset_default_graph instead.
+
+2025-10-29 23:50:28,214 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-10-30 15:31:32,454 - tensorflow - WARNING - From C:\Users\yashd\AppData\Local\Programs\Python\Python313\Lib\site-packages\keras\src\backend\common\global_state.py:82: The name tf.reset_default_graph is deprecated. Please use tf.compat.v1.reset_default_graph instead.
+
+2025-10-30 15:31:32,786 - py4j.clientserver - INFO - Closing down clientserver connection
+2025-10-30 15:32:15,706 - deep_learning_predictor - WARNING - Model not trained, returning random predictions
